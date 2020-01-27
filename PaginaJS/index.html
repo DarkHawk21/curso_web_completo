@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+	<!-- <div>
+		Soy un nodo padre por etiqueta
+
+		<div class="hijo">
+			Soy un nodo hijo por clase
+		</div>
+
+		<div id="hijo">
+			Soy uno nodo hijo por id
+		</div>
+	</div> -->
+
+	<div id="nodo">
+		soy nodo por html
+	</div>
+	
+	<script src="js/main.js"></script>
+    <script>
+    	//SELECTORES DE NODOS DEL DOM
+    	// var divs = document.getElementsByTagName("div");
+    	// var divClass = document.getElementsByClassName("hijo");
+    	// var divID = document.getElementById("hijo");
+
+    	// divs[1].style.background = "green";
+
+    	// divClass[0].style.background = "red";
+
+    	// divID.style.background = "orange";
+
+    	//CAMBIANDO EL CONTENIDO DE LOS NODOS DEL DOM
+    	/*
+			- .textContent = "Contenido que sustituye sin incluir el html";
+			- .innerHTML = "Contenido que sustituye incluyendo el HTML";
+    	*/
+
+    	// var caja = document.getElementById("hijo");
+
+    	// caja.textContent = "<p>SOY UN NODO HIJO POR ID</p>";
+    	// caja.innerHTML = "<p>SOY UN NODO HIJO POR ID</p>";
+
+    	//alert(caja.innerHTML);
+    	//alert(caja.textContent);
+
+    	//AGREGANDO NODOS AL DOM
+    	/*
+    		1.- Crear el nodo nuevo.
+    		.createElement("div");
+
+    		2.- Crear el nodo de texto o contenido del nodo nuevo. (Se puede omitir si no lo necesitamos)
+    		.createTextNode("Texto de contenido");
+
+    		3.- Añadir el texto al contenedor o nodo nuevo.
+    		contenedorpadre.appendChild(nodo_de_texto);
+
+    		4.- Agregar los atributos al nuevo nodo.
+    		contenedorpadre.setAttribute("class", "hijo2");
+
+    		5.- Agrega el elemento nuevo al documento.
+    		document.appendChild(nodo_caja o nodo_nuevo);
+    	*/
+    	var body = document.getElementsByTagName("body");
+
+    	// //Paso 1
+    	var nodoNuevo = document.createElement("div");
+
+    	// //Paso 2
+    	var nodoTexto = document.createTextNode("Nodo creado con JavaScript");
+
+    	// //Paso 3
+    	nodoNuevo.appendChild(nodoTexto);
+
+    	// //Paso 4
+    	// nodoNuevo.setAttribute("class", "nodoJS");
+
+    	// //Paso 5
+    	body[0].appendChild(nodoNuevo); //AppendChild ubica al elemento nuevo hasta el final.
+
+    	//MODIFICANDO NODOS DEL DOM
+    	//var nodo = document.getElementById("nodo");
+
+    	// nodo.id ="nuevo";
+    	// nodo.className = "nuevaClase";
+    	// nodo.toggle = "nuevaClase";
+
+    	//var body = document.getElementsByTagName("body");
+
+    	//body[0].insertBefore(nodoNuevo, elemento_referencia); //Inserta al elemento antes del elemento referencia
+
+    	//ELIMINANDO ELEMENTOS DEL DOM
+    	// var elemento_a_remplazar = document.getElementById("nodo");
+    	// body[0].replaceChild(nodoNuevo, elemento_a_remplazar);
+
+    	//EVENTOS DEL DOM
+    	/*
+    		* MODELO BÁSICO DE EVENTOS
+    			- Características limitadas
+    			+ Soportado por todos los navegadores
+    			- En línea 
+    			ejemplo: <button onclick="click();">Cleckeame</button>
+    			http://dis.um.es/~lopezquesada/documentos/IES_1213/LMSGI/curso/UT6/libroswebjavascript/www.librosweb.es/javascript/capitulo6/modelo_basico_de_eventos1.html
+
+    			* MODELO DE EVENTOS ESTÁNDAR
+    			+ Cosas tan complejas como nuestra sistema lo requiera.
+    			+ Soportado por todos los navegadores.
+    			ejemplo:
+    				caja.addEventListener('click', function() {
+						alert("Me clickeo");
+    				});
+
+    				caja.addEventListener('hover', function() {
+						alert("Hover");
+    				});
+
+    				caja.addEventListener('change', function() {
+						alert("El evento change ha detectado un cambio");
+    				});
+
+    				function click() {
+						alert("Recibí un evento");
+    				}
+
+    				caja.addEventListener('click', click());
+    				caja2.addEventListener('hover', click());
+    				caja3.addEventListener('change', click())
+    				caja4.addEventListener('blur', click());
+
+    				//ECMASCRIPT 5+
+    				function nombre(parametros) {
+						//code
+    				}
+
+    				var
+
+    				//ECMASCRIPT 6+
+    				nombre() => {
+	
+    				}
+
+    				let
+
+    				//ESCOPE DE FUNCIONES
+    				 
+					var variable = 0;
+
+    				function suma() {
+    					var variable = 0;
+    				}
+
+    				var variable = 0;
+
+    				document.write(variable);
+
+    				**Variables locales: Aquellas variables que pueden ser accedidas desde dentro de la funcion que las contiene, no desde fuera.
+
+    				**Variables globales: Aquellas variables que pueden ser accedidas desde fuera y desde dentro de la funcion que las contiene.
+    	*/
+
+    	// var nueva = 0;
+
+    	// function imprime() {
+    	// 	var nueva = 10;
+    	// 	document.write(nueva + "<br><br>");
+    	// }
+
+    	// imprime();
+    	// document.write(nueva); 
+    </script>
+</body>
+</html>

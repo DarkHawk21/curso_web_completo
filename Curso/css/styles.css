@@ -1,0 +1,162 @@
+/* #selectorID {
+    background: orange;
+} */
+
+
+/* .selectorClaseEspecial {
+    background: red;
+}
+
+.selectorClase {
+    background: pink;
+}
+
+.alerta {
+    width: 50%;
+    height: 200px;
+    background: rgba(0,0,0,0.5);
+    margin-bottom: 20px;
+}
+
+.alerta-true {
+    background: green;
+}
+
+.alerta-false {
+    background: red;
+}
+
+
+/* SELECTORES COMPUESTOS */
+/* h3 {
+    background: orange;
+}
+
+div h3 {
+    background: green;
+}
+
+div div h3 {
+    background: red;
+} */
+
+/* .h3 {
+    background: orange;
+}
+
+div .h3 {
+    background: red;
+}
+
+div div #h3 {
+    background: pink;
+}
+
+div .contenedor 
+#h3, div .contenedor h2 {
+    background: green;
+}
+
+p {
+    background: gray;
+}
+
+p[data] {
+    background: orange;
+}
+
+p[data="hola"] {
+    background: gray;
+}
+
+input {
+    background: red;
+}
+
+input[type] {
+    background: yellow;
+}
+
+input[type="password"] {
+    background: green;
+}
+
+ESTILOS PSEUDOCLASES
+a {
+    display: block;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.hover:hover {
+    color: orange;
+}
+
+.focus:focus {
+    background: red;
+}
+
+.visited:visited {
+    color: green;
+}
+
+p {
+    background: red;
+}
+
+p:first-child {
+    background: orange;
+}
+
+p:last-child {
+    background: green;
+}
+
+p:nth-child(3) {
+    background: pink;
+} */
+
+/* SELECTORES COMBINADOS DE PRECEDENCIA */
+/* div p {
+    background: red;
+}
+
+.primero>p {
+    background: orange;
+}
+
+p + i {
+    background: pink;
+}
+
+p.punto {
+    background: green;
+}
+
+p#punto {
+    background: green;
+} */
+
+/* COLORES */
+/* p {
+    background: orange;
+    color: orange;
+
+    background: #fff #000 #2b5896;
+    color: #fff #000 #2b5896;
+
+    background: rgb(255,255,255);
+    background: rgb(0,0,0);
+
+    background: rgba(0,0,0,1)
+} */
+
+body {
+    background-image: url("../src/img/Jpeg.jpg");
+    background-image: linear-gradient(to bottom right, #2b2b2b 20%, green);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}

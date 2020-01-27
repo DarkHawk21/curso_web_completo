@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>.:Proyecto final 2:.</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/libraries/FontAwesome_5.12/css/all.min.css">
+	<link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
+	<link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+</head>
+<body>
+	<header>
+		<div class="titulo_container">
+			<h2>Aplicación de tareas</h2>
+			<span id="contador"></span>
+		</div>
+
+		<div class="users_container">
+			<span id="img_user"></span>
+			<p>Enrique Carranza</p>
+		</div>
+	</header>
+
+	<!-- Slider main container -->
+	<div class="swiper-container">
+	    <!-- Additional required wrapper -->
+	    <div class="swiper-wrapper">
+	        <!-- Slides -->
+	        <div class="swiper-slide">Slide 1</div>
+	        <div class="swiper-slide">Slide 2</div>
+	        <div class="swiper-slide">Slide 3</div>
+	        ...
+	    </div>
+	    <!-- If we need pagination -->
+	    <div class="swiper-pagination"></div>
+
+	    <!-- If we need navigation buttons -->
+	    <div class="swiper-button-prev"></div>
+	    <div class="swiper-button-next"></div>
+
+	    <!-- If we need scrollbar -->
+	    <div class="swiper-scrollbar"></div>
+	</div>
+
+	<main>
+		<div class="container_principal">
+			<aside>
+				<div class="card">
+					<div class="card_head">
+						<span id="date_container">
+							<h2>Fecha:</h2>
+							<p class="date" id="date">24/01/2020</p>
+							<p class="date" id="time">14:41:00</p>
+						</span>
+					</div>
+
+					<div class="card_body">
+						<h3>Agrega una tarea</h3>
+
+						<form id="form_add">
+							<div>
+								<label for="titulo_task">Titulo:</label>
+								<input type="text" id="titulo_task" placeholder="Titulo...">
+							</div>
+
+							<div>
+								<label for="description_task">Descripción</label>
+								<textarea id="description_task" placeholder="Descripción de la tarea..."></textarea>
+							</div>
+
+							<div>
+								<label for="date_input_task">Fecha</label>
+								<input type="date" id="date_input_task">
+							</div>
+
+							<div>
+								<label for="prioridad_input">Prioridad</label>
+								<select id="prioridad_input">
+									<option value="">...</option>
+									<option value="1">Muy alta</option>
+									<option value="2">Alta</option>
+									<option value="3">Normal</option>
+									<option value="4">Baja</option>
+								</select>
+							</div>
+
+							<div>
+								<button id="btn_send" class="btn" type="submit">Agregar</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</aside>
+
+			<section id="tasks"></section>
+		</div>
+	</main>
+	
+	<script src="js/jquery.js"></script>
+	<script src="https://unpkg.com/swiper/js/swiper.js"></script>
+	<script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/swiper.js"></script>
+	<script>
+		var tareas = 0;
+
+			btn_send.addEventListener('click',function(evento) {
+				var date = document.getElementById("date");
+				var time = document.getElementById("time");
+				var titulo_task = document.getElementById("titulo_task");
+				var description_task = document.getElementById("description_task");
+				var date_input_task = document.getElementById("date_input_task");
+				var prioridad_input = document.getElementById("prioridad_input");
+				var btn_send = document.getElementById("btn_send");
+				var tasks = document.getElementById("tasks");
+
+				evento.preventDefault();
+				date = date.textContent;
+				time = time.textContent;
+				titulo_task = titulo_task.value;
+				date_input_task = date_input_task.value;
+				description_task = description_task.value;
+				prioridad_input = prioridad_input.value;
+
+				switch (prioridad_input) {
+					case 1:
+						prioridad_input = "MUY ALTA";
+						break;
+					case 2:
+						prioridad_input = "ALTA";
+						break;
+					case 3:
+						prioridad_input = "NORMAL";
+						break;
+					case 4:
+						prioridad_input = "BAJA";
+						break;
+					default:
+						break;
+				}
+
+				var plantilla = `
+					<div class="card card_edit" id="`+ tareas +`">
+							<div class="card_head">
+								<span id="date_container">
+									<h2>Fecha:</h2>
+									<p class="date">`+ date +`</p>
+									<p class="date">`+ time +`</p>
+								</span>
+							</div>
+
+							<div class="card_body">
+								<h3>Agrega una tarea</h3>
+								<div class="titulo_container">
+									<h2 contenteditable="true">`+ titulo_task +`</h2>
+								</div>
+
+								<div class="descripcion_container">
+									<p contenteditable="true">`+ description_task +`</p>
+								</div>
+
+								<div class="date_container_edit">
+									<p>`+ date_input_task +`</p>
+								</div>
+
+								<div class="priority muy_alta">
+									 <p>`+ prioridad_input +`</p>
+								</div>
+
+								<div class="btn_container">
+									<button class="btn">Eliminar</button>
+								</div>
+							</div>
+						</div>
+				`;
+
+				$("#tasks").append(plantilla);
+				tareas++;
+				$("#contador").text(tareas);
+			});
+
+
+		
+	</script>
+</body>
+</html>
